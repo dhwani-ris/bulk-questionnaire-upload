@@ -1,0 +1,105 @@
+<div class="upload-container">
+  <mat-card>
+    <mat-card-header>
+      <div class="header-content">
+        <div class="title-section">
+          <mat-card-title>Bulk Upload Questionnaire</mat-card-title>
+          <mat-card-subtitle>Create large forms easily with Excel (.xls or .xlsx)</mat-card-subtitle>
+        </div>
+        <div class="logo-section">
+          <img src="assets/mform-logo.svg" alt="mForm" onerror="this.onerror=null; this.style.display='none';">
+        </div>
+      </div>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="info-box">
+        <mat-icon color="primary">info</mat-icon>
+        <p>Upload an Excel file in XLSForm format to automatically create your questionnaire. This will save you time when building large forms.</p>
+      </div>
+      
+      <div 
+        class="upload-area" 
+        [class.active]="isDragging"
+        [class.has-file]="fileUploaded"
+        (dragover)="onDragOver($event)" 
+        (dragleave)="onDragLeave($event)" 
+        (drop)="onDrop($event)">
+        
+        <ng-container *ngIf="!fileUploaded">
+          <div class="upload-content">
+            <div class="upload-graphic">
+              <mat-icon class="upload-icon">cloud_upload</mat-icon>
+              <div class="upload-circle"></div>
+            </div>
+            <h3>Drag & Drop your Excel file here</h3>
+            <p class="or-text">- OR -</p>
+            <button mat-raised-button color="primary" class="browse-button">
+              <mat-icon>folder_open</mat-icon>
+              <label for="file-input">Browse Files</label>
+            </button>
+            <input 
+              type="file" 
+              id="file-input" 
+              accept=".xls,.xlsx" 
+              (change)="onFileSelected($event)" 
+              style="display: none;">
+            <p class="file-types">Supported file types: .xls, .xlsx</p>
+          </div>
+        </ng-container>
+        
+        <ng-container *ngIf="fileUploaded">
+          <div class="file-info">
+            <div class="file-status">
+              <mat-icon class="file-icon">description</mat-icon>
+              <div class="file-details">
+                <h3 class="file-name">{{ fileName }}</h3>
+                <p class="file-status-text">Ready to process</p>
+              </div>
+            </div>
+            <button 
+              mat-icon-button 
+              color="warn" 
+              (click)="clearFile()" 
+              aria-label="Remove file"
+              class="remove-button">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+          <mat-progress-bar 
+            *ngIf="isLoading" 
+            mode="indeterminate"
+            color="accent">
+          </mat-progress-bar>
+        </ng-container>
+      </div>
+      
+      <div class="tips-section" *ngIf="!fileUploaded">
+        <h4>Tips for successful upload:</h4>
+        <ul>
+          <li>Use the XLSForm format for your Excel files</li>
+          <li>Include survey, choices, and settings sheets</li>
+          <li>Maximum supported questions: 500+</li>
+          <li><a href="https://xlsform.org/en/" target="_blank">Learn more about XLSForm</a></li>
+        </ul>
+      </div>
+    </mat-card-content>
+    
+    <mat-card-actions align="end">
+      <button 
+        mat-stroked-button 
+        [disabled]="!fileUploaded || isLoading"
+        (click)="clearFile()">
+        Cancel
+      </button>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        [disabled]="!fileUploaded || isLoading"
+        (click)="processForm()">
+        <mat-icon>send</mat-icon>
+        Process Form
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
