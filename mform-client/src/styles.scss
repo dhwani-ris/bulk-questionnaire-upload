@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+/* Angular Material Theme Customization */
+:root {
+  --primary-color: #3f51b5;
+  --accent-color: #ff4081;
+  --warn-color: #f44336;
+  --background-color: #f7f9fc;
+  --card-color: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --success-color: #4caf50;
+}
+
+/* Snackbar customization */
+.success-snackbar {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.error-snackbar {
+  background-color: var(--warn-color);
+  color: white;
+}
+
+/* Global Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+/* Box Shadows */
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Transitions */
+.transition {
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Font weights */
+.font-light { font-weight: 300; }
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }

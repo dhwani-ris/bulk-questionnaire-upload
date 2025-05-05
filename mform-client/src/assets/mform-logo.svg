@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <style>
+    .text { font-family: 'Arial', sans-serif; font-weight: bold; }
+    .m-letter { fill: #3f51b5; }
+    .form-text { fill: #333333; }
+    .accent { fill: #ff4081; }
+  </style>
+  
+  <!-- Main logo shape -->
+  <rect x="10" y="15" width="40" height="30" rx="6" class="m-letter" />
+  
+  <!-- m-form text -->
+  <text x="60" y="38" class="text form-text" font-size="24">Form</text>
+  <text x="20" y="38" class="text" font-size="24" fill="white">m</text>
+  
+  <!-- Document icon -->
+  <g transform="translate(130, 20) scale(0.8)">
+    <path d="M40,12H24c-2.2,0-4,1.8-4,4v28c0,2.2,1.8,4,4,4h16c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z" fill="#f5f5f5"/>
+    <path d="M36,22H28c-1.1,0-2-0.9-2-2s0.9-2,2-2h8c1.1,0,2,0.9,2,2S37.1,22,36,22z" class="accent"/>
+    <path d="M36,30H28c-1.1,0-2-0.9-2-2s0.9-2,2-2h8c1.1,0,2,0.9,2,2S37.1,30,36,30z" class="accent"/>
+    <path d="M36,38H28c-1.1,0-2-0.9-2-2s0.9-2,2-2h8c1.1,0,2,0.9,2,2S37.1,38,36,38z" class="accent"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="170" y="20" r="5" class="accent" />
+</svg> 
